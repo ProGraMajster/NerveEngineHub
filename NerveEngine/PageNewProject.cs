@@ -15,11 +15,18 @@ namespace NerveEngine
         public PageNewProject()
         {
             InitializeComponent();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ((PageNewProject)this).Hide();
+            ((PageNewProject)this).Dispose();
         }
     }
 }

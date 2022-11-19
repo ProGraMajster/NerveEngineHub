@@ -13,15 +13,15 @@ namespace NerveEngine
 {
     public partial class FormMain : Form
     {
-        public FormSplash formSplash;
+        /*public FormSplash formSplash;*/
         public FormMain()
         {
             this.Visible= false;
             InitializeComponent();
             this.Hide();
             timerhide.Start();
-            formSplash = new FormSplash();
-            formSplash.Show();
+            /*formSplash = new FormSplash();
+            formSplash.Show();*/
             this.Hide();
         }
 
@@ -39,6 +39,30 @@ namespace NerveEngine
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public PageNewProject pageNewProject=null;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            if (this.pageNewProject == null)
+            {
+                this.pageNewProject = new PageNewProject()
+                {
+                    Dock = DockStyle.Fill
+                };
+                pageNewProject.Disposed += PageNewProject_Disposed;
+                this.Controls.Add(this.pageNewProject);
+                pageNewProject.Show();
+                pageNewProject.BringToFront();
+            }
+        }
+
+        private void PageNewProject_Disposed(object sender, EventArgs e)
+        {
+            panel1.Show();
+            pageNewProject.Disposed-= PageNewProject_Disposed;
+            GC.SuppressFinalize(pageNewProject);
+            pageNewProject = null;
         }
     }
 }

@@ -52,11 +52,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonOpenProject = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonNewProject = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelListProjects = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.timerhide = new System.Windows.Forms.Timer(this.components);
             this.panelProjects = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -276,6 +278,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(54, 46);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // panel4
             // 
@@ -350,7 +353,7 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.button4);
+            this.panel10.Controls.Add(this.buttonOpenProject);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel10.Location = new System.Drawing.Point(529, 20);
             this.panel10.Name = "panel10";
@@ -358,25 +361,26 @@
             this.panel10.Size = new System.Drawing.Size(103, 40);
             this.panel10.TabIndex = 2;
             // 
-            // button4
+            // buttonOpenProject
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(5, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 40);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Open";
-            this.button4.UseVisualStyleBackColor = false;
+            this.buttonOpenProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.buttonOpenProject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonOpenProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenProject.FlatAppearance.BorderSize = 0;
+            this.buttonOpenProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenProject.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonOpenProject.ForeColor = System.Drawing.Color.White;
+            this.buttonOpenProject.Location = new System.Drawing.Point(5, 0);
+            this.buttonOpenProject.Name = "buttonOpenProject";
+            this.buttonOpenProject.Size = new System.Drawing.Size(88, 40);
+            this.buttonOpenProject.TabIndex = 0;
+            this.buttonOpenProject.Text = "Open";
+            this.buttonOpenProject.UseVisualStyleBackColor = false;
+            this.buttonOpenProject.Click += new System.EventHandler(this.buttonOpenProject_Click);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button3);
+            this.panel9.Controls.Add(this.buttonNewProject);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel9.Location = new System.Drawing.Point(632, 20);
             this.panel9.Name = "panel9";
@@ -384,22 +388,22 @@
             this.panel9.Size = new System.Drawing.Size(130, 40);
             this.panel9.TabIndex = 1;
             // 
-            // button3
+            // buttonNewProject
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(33)))), ((int)(((byte)(133)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(5, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 40);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "New project";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonNewProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(33)))), ((int)(((byte)(133)))));
+            this.buttonNewProject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonNewProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonNewProject.FlatAppearance.BorderSize = 0;
+            this.buttonNewProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewProject.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonNewProject.ForeColor = System.Drawing.Color.White;
+            this.buttonNewProject.Location = new System.Drawing.Point(5, 0);
+            this.buttonNewProject.Name = "buttonNewProject";
+            this.buttonNewProject.Size = new System.Drawing.Size(115, 40);
+            this.buttonNewProject.TabIndex = 0;
+            this.buttonNewProject.Text = "New project";
+            this.buttonNewProject.UseVisualStyleBackColor = false;
+            this.buttonNewProject.Click += new System.EventHandler(this.buttonNewProject_Click);
             // 
             // label1
             // 
@@ -416,6 +420,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel3.Controls.Add(this.panelListProjects);
             this.panel3.Controls.Add(this.panel17);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -424,6 +429,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(772, 407);
             this.panel3.TabIndex = 2;
+            // 
+            // panelListProjects
+            // 
+            this.panelListProjects.AutoScroll = true;
+            this.panelListProjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelListProjects.Location = new System.Drawing.Point(0, 45);
+            this.panelListProjects.Name = "panelListProjects";
+            this.panelListProjects.Padding = new System.Windows.Forms.Padding(40, 20, 20, 0);
+            this.panelListProjects.Size = new System.Drawing.Size(772, 362);
+            this.panelListProjects.TabIndex = 1;
             // 
             // panel17
             // 
@@ -434,6 +449,7 @@
             this.panel17.Controls.Add(this.label3);
             this.panel17.Controls.Add(this.label2);
             this.panel17.Controls.Add(this.panel18);
+            this.panel17.Controls.Add(this.panel21);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 0);
             this.panel17.Name = "panel17";
@@ -445,10 +461,10 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(676, 0);
+            this.label5.Location = new System.Drawing.Point(678, 0);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label5.Size = new System.Drawing.Size(96, 45);
+            this.label5.Size = new System.Drawing.Size(54, 45);
             this.label5.TabIndex = 4;
             this.label5.Text = "PATH";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -458,7 +474,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(527, 0);
+            this.label6.Location = new System.Drawing.Point(529, 0);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label6.Size = new System.Drawing.Size(149, 45);
@@ -471,7 +487,7 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(378, 0);
+            this.label4.Location = new System.Drawing.Point(380, 0);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label4.Size = new System.Drawing.Size(149, 45);
@@ -484,7 +500,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(93, 0);
+            this.label3.Location = new System.Drawing.Point(95, 0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label3.Size = new System.Drawing.Size(285, 45);
@@ -496,7 +512,7 @@
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Location = new System.Drawing.Point(38, 0);
+            this.label2.Location = new System.Drawing.Point(40, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 45);
             this.label2.TabIndex = 1;
@@ -509,8 +525,17 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel18.Location = new System.Drawing.Point(0, 0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(38, 45);
+            this.panel18.Size = new System.Drawing.Size(40, 45);
             this.panel18.TabIndex = 0;
+            // 
+            // panel21
+            // 
+            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel21.Location = new System.Drawing.Point(732, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(40, 45);
+            this.panel21.TabIndex = 1;
             // 
             // timerhide
             // 
@@ -574,9 +599,9 @@
         private Panel panel8;
         private Panel panel9;
         private Label label1;
-        private Button button3;
+        private Button buttonNewProject;
         private Panel panel10;
-        private Button button4;
+        private Button buttonOpenProject;
         private System.Windows.Forms.Timer timerhide;
         private Panel panelProjects;
         private Panel panel11;
@@ -598,5 +623,7 @@
         private Label label3;
         private Label label2;
         private Panel panel18;
+        private Panel panelListProjects;
+        private Panel panel21;
     }
 }

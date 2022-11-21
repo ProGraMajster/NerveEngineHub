@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NerveEngineHub;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,16 @@ namespace NerveEngine
 
         }
         public PageNewProject pageNewProject=null;
-        private void button3_Click(object sender, EventArgs e)
+
+        private void PageNewProject_Disposed(object sender, EventArgs e)
+        {
+            panel1.Show();
+            pageNewProject.Disposed-= PageNewProject_Disposed;
+            GC.SuppressFinalize(pageNewProject);
+            pageNewProject = null;
+        }
+
+        private void buttonNewProject_Click(object sender, EventArgs e)
         {
             panel1.Hide();
             if (this.pageNewProject == null)
@@ -57,12 +67,12 @@ namespace NerveEngine
             }
         }
 
-        private void PageNewProject_Disposed(object sender, EventArgs e)
+        private void buttonOpenProject_Click(object sender, EventArgs e)
         {
-            panel1.Show();
-            pageNewProject.Disposed-= PageNewProject_Disposed;
-            GC.SuppressFinalize(pageNewProject);
-            pageNewProject = null;
+            panelListProjects.Controls.Add(new Projectsitem()
+            {
+                Dock = DockStyle.Top
+            });
         }
     }
 }
